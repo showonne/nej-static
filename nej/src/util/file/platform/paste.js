@@ -62,12 +62,12 @@ NEJ.define([
     p.__doDumpImage = (function(){
         var div = e._$create('div');
         div.contentEditable = true;
-        // e._$style(div,{
-        //     position:'absolute',
-        //     top:0,
-        //     width:'0',
-        //     height:'0',
-        // });
+        e._$style(div,{
+            position:'absolute',
+            top:0,
+            width:'0',
+            height:'0',
+        });
         document.body.appendChild(div);
         return function(config){
             div.focus();

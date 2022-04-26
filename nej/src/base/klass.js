@@ -179,7 +179,7 @@ NEJ.define([
                 };
                 this.prototype.__super = function(){
                     var _name = _stack[_stack.length-1],
-                        // _method = arguments.callee.caller || arguments.callee._caller;
+                        _method = arguments.callee.caller || arguments.callee._caller;
                     if (!_name){
                         _name = _doUpdateCache(_method,this.constructor);
                     }else{
