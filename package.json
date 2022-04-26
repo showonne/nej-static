@@ -9,6 +9,10 @@
     "webpack-cli": "^4.9.2"
   },
   "scripts": {
-    "start": "webpack watch --config ./webpack.config.js"
+    "start": "webpack watch --config ./webpack.config.js",
+    "postinstall": "patch-package"
+  },
+  "devDependencies": {
+    "patch-package": "^6.4.7"
   }
 }

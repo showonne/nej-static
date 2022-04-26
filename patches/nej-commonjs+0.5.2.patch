@@ -1,0 +1,29 @@
+diff --git a/node_modules/nej-commonjs/base/klass.js b/node_modules/nej-commonjs/base/klass.js
+index 936d300..275f42a 100644
+--- a/node_modules/nej-commonjs/base/klass.js
++++ b/node_modules/nej-commonjs/base/klass.js
+@@ -183,7 +183,7 @@ _p._$klass = (function() {
+             };
+             this.prototype.__super = function() {
+                 var _name = _stack[_stack.length - 1],
+-                    _method = arguments.callee.caller;
++                    _method = arguments.callee.caller || arguments.callee._caller;
+                 if (!_name) {
+                     _name = _doUpdateCache(_method, this.constructor);
+                 } else {
+diff --git a/node_modules/nej-commonjs/util/file/platform/paste.js b/node_modules/nej-commonjs/util/file/platform/paste.js
+index 667ffb3..0a91026 100644
+--- a/node_modules/nej-commonjs/util/file/platform/paste.js
++++ b/node_modules/nej-commonjs/util/file/platform/paste.js
+@@ -65,9 +65,8 @@ p.__doDumpImage = (function() {
+         position: 'absolute',
+         top: 0,
+         left: '300px',
+-        width: '200px',
+-        height: '200px',
+-        border: '1px solid #aaa'
++        width: '0',
++        height: '0'
+     });
+     document.body.appendChild(div);
+     return function(config) {
